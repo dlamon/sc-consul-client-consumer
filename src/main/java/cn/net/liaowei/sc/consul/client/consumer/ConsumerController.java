@@ -22,11 +22,9 @@ public class ConsumerController {
         this.restTemplate = restTemplate;
     }
 
-    @GetMapping("/zone")
+    @GetMapping("/info")
     public Map<String, String> consumerZone() {
-        String name = restTemplate.getForObject("http://consul-client/zone/name", String.class);
-        Map<String, String> result = new HashMap<String, String>();
-        result.put("zone", name);
+        Map<String, String> result = restTemplate.getForObject("http://consul-client/client/info", Map.class);
         return result;
     }
 }
