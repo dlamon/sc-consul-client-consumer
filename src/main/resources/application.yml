@@ -5,11 +5,11 @@ spring:
     name: consul-client-consumer
   cloud:
     consul:
-      host: 192.168.99.103
+      host: 192.168.99.104
       port: 8500
       discovery:
         enabled: true
         server-list-query-tags:
-          consul-client: "v0.0.2"
+          consul-client: "v0.0.1"
         datacenters:
           consul-client: ["dc-tc"]
